@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41795231282356C30019E12E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41795230282356C30019E12E /* AssetsLibrary.framework */; };
+		417952322823578D0019E12E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871192822010900C40C33 /* libiconv.tbd */; };
+		41F870EF2821FD5300C40C33 /* GStreamer_Brilliant.docc in Sources */ = {isa = PBXBuildFile; fileRef = 41F870EE2821FD5300C40C33 /* GStreamer_Brilliant.docc */; };
+		41F870F52821FD5300C40C33 /* GStreamer_Brilliant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F870EA2821FD5300C40C33 /* GStreamer_Brilliant.framework */; };
+		41F870FA2821FD5300C40C33 /* GStreamer_BrilliantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F870F92821FD5300C40C33 /* GStreamer_BrilliantTests.m */; };
+		41F870FB2821FD5300C40C33 /* GStreamer_Brilliant.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F870ED2821FD5300C40C33 /* GStreamer_Brilliant.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41F871092821FF7500C40C33 /* GStreamerRTSPBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F871042821FF7400C40C33 /* GStreamerRTSPBackend.m */; };
+		41F8710A2821FF7500C40C33 /* gst_ios_init.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F871052821FF7400C40C33 /* gst_ios_init.m */; };
+		41F8710B2821FF7500C40C33 /* GStreamerRTSPBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F871062821FF7400C40C33 /* GStreamerRTSPBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41F8710C2821FF7500C40C33 /* gst_ios_init.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F871072821FF7400C40C33 /* gst_ios_init.h */; };
+		41F8710D2821FF7500C40C33 /* GStreamerRTSPBackendDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 41F871082821FF7400C40C33 /* GStreamerRTSPBackendDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41F871102821FFC900C40C33 /* GStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F8710F2821FFC900C40C33 /* GStreamer.framework */; };
+		41F87114282200F600C40C33 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F87113282200F600C40C33 /* VideoToolbox.framework */; };
+		41F87116282200FB00C40C33 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F87115282200FB00C40C33 /* CoreVideo.framework */; };
+		41F871182822010100C40C33 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871172822010100C40C33 /* AVFoundation.framework */; };
+		41F8711B2822011000C40C33 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F8711A2822011000C40C33 /* Metal.framework */; };
+		41F8711D2822011500C40C33 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F8711C2822011500C40C33 /* Network.framework */; };
+		41F8711F2822011E00C40C33 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F8711E2822011E00C40C33 /* CoreMedia.framework */; };
+		41F871212822012600C40C33 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871202822012600C40C33 /* CoreAudio.framework */; };
+		41F871232822013000C40C33 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871222822013000C40C33 /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41F870F62821FD5300C40C33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41F870E12821FD5300C40C33 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41F870E92821FD5300C40C33;
+			remoteInfo = "GStreamer-Brilliant";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41795230282356C30019E12E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/iOSSupport/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		41F870EA2821FD5300C40C33 /* GStreamer_Brilliant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GStreamer_Brilliant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F870ED2821FD5300C40C33 /* GStreamer_Brilliant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamer_Brilliant.h; sourceTree = "<group>"; };
+		41F870EE2821FD5300C40C33 /* GStreamer_Brilliant.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GStreamer_Brilliant.docc; sourceTree = "<group>"; };
+		41F870F42821FD5300C40C33 /* GStreamer-BrilliantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GStreamer-BrilliantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F870F92821FD5300C40C33 /* GStreamer_BrilliantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GStreamer_BrilliantTests.m; sourceTree = "<group>"; };
+		41F871042821FF7400C40C33 /* GStreamerRTSPBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GStreamerRTSPBackend.m; sourceTree = "<group>"; };
+		41F871052821FF7400C40C33 /* gst_ios_init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gst_ios_init.m; sourceTree = "<group>"; };
+		41F871062821FF7400C40C33 /* GStreamerRTSPBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerRTSPBackend.h; sourceTree = "<group>"; };
+		41F871072821FF7400C40C33 /* gst_ios_init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gst_ios_init.h; sourceTree = "<group>"; };
+		41F871082821FF7400C40C33 /* GStreamerRTSPBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GStreamerRTSPBackendDelegate.h; sourceTree = "<group>"; };
+		41F8710F2821FFC900C40C33 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../../../Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework; sourceTree = "<group>"; };
+		41F87113282200F600C40C33 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/VideoToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		41F87115282200FB00C40C33 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CoreVideo.framework; sourceTree = DEVELOPER_DIR; };
+		41F871172822010100C40C33 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		41F871192822010900C40C33 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libiconv.tbd; sourceTree = DEVELOPER_DIR; };
+		41F8711A2822011000C40C33 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
+		41F8711C2822011500C40C33 /* Network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Network.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/Network.framework; sourceTree = DEVELOPER_DIR; };
+		41F8711E2822011E00C40C33 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		41F871202822012600C40C33 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		41F871222822013000C40C33 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41F870E72821FD5300C40C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F871182822010100C40C33 /* AVFoundation.framework in Frameworks */,
+				41F87114282200F600C40C33 /* VideoToolbox.framework in Frameworks */,
+				41F871212822012600C40C33 /* CoreAudio.framework in Frameworks */,
+				41F8711B2822011000C40C33 /* Metal.framework in Frameworks */,
+				41F871102821FFC900C40C33 /* GStreamer.framework in Frameworks */,
+				41F871232822013000C40C33 /* AudioToolbox.framework in Frameworks */,
+				41F87116282200FB00C40C33 /* CoreVideo.framework in Frameworks */,
+				417952322823578D0019E12E /* libiconv.tbd in Frameworks */,
+				41F8711D2822011500C40C33 /* Network.framework in Frameworks */,
+				41F8711F2822011E00C40C33 /* CoreMedia.framework in Frameworks */,
+				41795231282356C30019E12E /* AssetsLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F870F12821FD5300C40C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F870F52821FD5300C40C33 /* GStreamer_Brilliant.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41F870E02821FD5300C40C33 = {
+			isa = PBXGroup;
+			children = (
+				41F870EC2821FD5300C40C33 /* GStreamer-Brilliant */,
+				41F870F82821FD5300C40C33 /* GStreamer-BrilliantTests */,
+				41F870EB2821FD5300C40C33 /* Products */,
+				41F8710E2821FFC900C40C33 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		41F870EB2821FD5300C40C33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41F870EA2821FD5300C40C33 /* GStreamer_Brilliant.framework */,
+				41F870F42821FD5300C40C33 /* GStreamer-BrilliantTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41F870EC2821FD5300C40C33 /* GStreamer-Brilliant */ = {
+			isa = PBXGroup;
+			children = (
+				41F871072821FF7400C40C33 /* gst_ios_init.h */,
+				41F871052821FF7400C40C33 /* gst_ios_init.m */,
+				41F871062821FF7400C40C33 /* GStreamerRTSPBackend.h */,
+				41F871042821FF7400C40C33 /* GStreamerRTSPBackend.m */,
+				41F871082821FF7400C40C33 /* GStreamerRTSPBackendDelegate.h */,
+				41F870ED2821FD5300C40C33 /* GStreamer_Brilliant.h */,
+				41F870EE2821FD5300C40C33 /* GStreamer_Brilliant.docc */,
+			);
+			path = "GStreamer-Brilliant";
+			sourceTree = "<group>";
+		};
+		41F870F82821FD5300C40C33 /* GStreamer-BrilliantTests */ = {
+			isa = PBXGroup;
+			children = (
+				41F870F92821FD5300C40C33 /* GStreamer_BrilliantTests.m */,
+			);
+			path = "GStreamer-BrilliantTests";
+			sourceTree = "<group>";
+		};
+		41F8710E2821FFC900C40C33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41795230282356C30019E12E /* AssetsLibrary.framework */,
+				41F871222822013000C40C33 /* AudioToolbox.framework */,
+				41F871202822012600C40C33 /* CoreAudio.framework */,
+				41F8711E2822011E00C40C33 /* CoreMedia.framework */,
+				41F8711C2822011500C40C33 /* Network.framework */,
+				41F8711A2822011000C40C33 /* Metal.framework */,
+				41F871192822010900C40C33 /* libiconv.tbd */,
+				41F871172822010100C40C33 /* AVFoundation.framework */,
+				41F87115282200FB00C40C33 /* CoreVideo.framework */,
+				41F87113282200F600C40C33 /* VideoToolbox.framework */,
+				41F8710F2821FFC900C40C33 /* GStreamer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		41F870E52821FD5300C40C33 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F870FB2821FD5300C40C33 /* GStreamer_Brilliant.h in Headers */,
+				41F8710C2821FF7500C40C33 /* gst_ios_init.h in Headers */,
+				41F8710D2821FF7500C40C33 /* GStreamerRTSPBackendDelegate.h in Headers */,
+				41F8710B2821FF7500C40C33 /* GStreamerRTSPBackend.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		41F870E92821FD5300C40C33 /* GStreamer-Brilliant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41F870FE2821FD5300C40C33 /* Build configuration list for PBXNativeTarget "GStreamer-Brilliant" */;
+			buildPhases = (
+				41F870E52821FD5300C40C33 /* Headers */,
+				41F870E62821FD5300C40C33 /* Sources */,
+				41F870E72821FD5300C40C33 /* Frameworks */,
+				41F870E82821FD5300C40C33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GStreamer-Brilliant";
+			productName = "GStreamer-Brilliant";
+			productReference = 41F870EA2821FD5300C40C33 /* GStreamer_Brilliant.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		41F870F32821FD5300C40C33 /* GStreamer-BrilliantTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41F871012821FD5300C40C33 /* Build configuration list for PBXNativeTarget "GStreamer-BrilliantTests" */;
+			buildPhases = (
+				41F870F02821FD5300C40C33 /* Sources */,
+				41F870F12821FD5300C40C33 /* Frameworks */,
+				41F870F22821FD5300C40C33 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41F870F72821FD5300C40C33 /* PBXTargetDependency */,
+			);
+			name = "GStreamer-BrilliantTests";
+			productName = "GStreamer-BrilliantTests";
+			productReference = 41F870F42821FD5300C40C33 /* GStreamer-BrilliantTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41F870E12821FD5300C40C33 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					41F870E92821FD5300C40C33 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					41F870F32821FD5300C40C33 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 41F870E42821FD5300C40C33 /* Build configuration list for PBXProject "GStreamer-Brilliant" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41F870E02821FD5300C40C33;
+			productRefGroup = 41F870EB2821FD5300C40C33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41F870E92821FD5300C40C33 /* GStreamer-Brilliant */,
+				41F870F32821FD5300C40C33 /* GStreamer-BrilliantTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41F870E82821FD5300C40C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F870F22821FD5300C40C33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41F870E62821FD5300C40C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F871092821FF7500C40C33 /* GStreamerRTSPBackend.m in Sources */,
+				41F870EF2821FD5300C40C33 /* GStreamer_Brilliant.docc in Sources */,
+				41F8710A2821FF7500C40C33 /* gst_ios_init.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F870F02821FD5300C40C33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F870FA2821FD5300C40C33 /* GStreamer_BrilliantTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41F870F72821FD5300C40C33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41F870E92821FD5300C40C33 /* GStreamer-Brilliant */;
+			targetProxy = 41F870F62821FD5300C40C33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41F870FC2821FD5300C40C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		41F870FD2821FD5300C40C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		41F870FF2821FD5300C40C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7FL7548EA5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk\"";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-fembed-bitcode-marker";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+					"-Objc",
+					"-lresolv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamer-Brilliant";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Debug;
+		};
+		41F871002821FD5300C40C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7FL7548EA5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk\"";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk/GStreamer.framework/Headers\"";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = "-fembed-bitcode";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lc++",
+					"-Objc",
+					"-lresolv",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamer-Brilliant";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = YES;
+			};
+			name = Release;
+		};
+		41F871022821FD5300C40C33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FL7548EA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamer-BrilliantTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		41F871032821FD5300C40C33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7FL7548EA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamer-BrilliantTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41F870E42821FD5300C40C33 /* Build configuration list for PBXProject "GStreamer-Brilliant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F870FC2821FD5300C40C33 /* Debug */,
+				41F870FD2821FD5300C40C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41F870FE2821FD5300C40C33 /* Build configuration list for PBXNativeTarget "GStreamer-Brilliant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F870FF2821FD5300C40C33 /* Debug */,
+				41F871002821FD5300C40C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41F871012821FD5300C40C33 /* Build configuration list for PBXNativeTarget "GStreamer-BrilliantTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F871022821FD5300C40C33 /* Debug */,
+				41F871032821FD5300C40C33 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41F870E12821FD5300C40C33 /* Project object */;
+}
