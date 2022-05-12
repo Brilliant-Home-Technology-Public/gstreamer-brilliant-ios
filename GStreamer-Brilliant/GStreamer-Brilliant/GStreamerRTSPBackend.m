@@ -72,6 +72,7 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
   gint64 desired_position;     /* Position to seek to, once the pipeline is running */
   GstClockTime last_seek_time; /* For seeking overflow prevention (throttling) p*/
   gboolean is_live;            /* Live streams do not use buffering */
+  GstElement *volume;          /* Volume element for muting and adjusting stream volume */
   NSMutableArray<NSNumber *> *rtsp_signal_ids;
   NSMutableArray<NSNumber *> *bus_signal_ids;
 }
@@ -149,6 +150,11 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
     GST_DEBUG ("Scheduling seek to %" GST_TIME_FORMAT " for later", GST_TIME_ARGS (position));
     self->desired_position = position;
   }
+}
+
+-(void) setMute:(BOOL)muted
+{
+  g_object_set(volume, "mute", muted ? TRUE : FALSE, NULL);
 }
 
 /*
@@ -411,12 +417,8 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend
   g_main_context_push_thread_default(context);
   
   /* Build pipeline */
-  //      NSString * parseLaunchString = [NSString stringWithFormat:
-  //                                      @"rtspsrc debug=true name=rtspsrc rtspsrc. ! rtph264depay ! h264parse ! decodebin ! autovideoconvert ! autovideosink rtspsrc. ! rtpmp4adepay ! decodebin ! autoaudiosink"
-  //      ];
-  
   NSString * parseLaunchString = [NSString stringWithFormat:
-                                    @"rtspsrc debug=true name=rtspsrc rtspsrc. ! rtph264depay ! h264parse ! decodebin ! autovideoconvert ! autovideosink"
+                                    @"rtspsrc debug=true name=rtspsrc rtspsrc. ! rtph264depay ! h264parse ! decodebin ! autovideoconvert ! autovideosink rtspsrc. ! decodebin ! audioconvert ! volume name=vol ! autoaudiosink"
   ];
   
   pipeline = gst_parse_launch([parseLaunchString UTF8String], &error);
@@ -428,7 +430,9 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend
     return;
   }
   rtsp_src = gst_bin_get_by_name(GST_BIN (pipeline), "rtspsrc");
-  
+  volume = gst_bin_get_by_name(GST_BIN (pipeline), "vol");
+  g_object_set(volume, "mute", FALSE, NULL);
+
   // Rtsp factory
   g_object_set(rtsp_src, "protocols", 0x4, NULL);
   g_object_set(rtsp_src, "tcp-timeout", (guint64)1000000*15, NULL); // In microseconds

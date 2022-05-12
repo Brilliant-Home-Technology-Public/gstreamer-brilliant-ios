@@ -51,4 +51,6 @@
 /* Set the position to seek to, in milliseconds */
 -(void) setPosition:(NSInteger)milliseconds;
 
+-(void) setMute:(BOOL)muted;
+
 @end
