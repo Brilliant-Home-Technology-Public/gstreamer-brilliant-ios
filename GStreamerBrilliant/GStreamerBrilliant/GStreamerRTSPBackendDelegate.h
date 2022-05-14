@@ -1,5 +1,5 @@
 /*****************************************************************************
- * GStreamer-Brilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
  * Copyright (C) 2022 Brilliant Home Technologies
  *
@@ -21,36 +21,22 @@
  *****************************************************************************/
 
 #import <Foundation/Foundation.h>
-#import "GStreamerRTSPBackendDelegate.h"
-#import <UIKit/UIKit.h>
 
-@interface GStreamerRTSPBackend : NSObject
+@protocol GStreamerRTSPBackendDelegate <NSObject>
 
-+(void) gst_ios_init;
+@optional
+/* Called when the GStreamer RTSP backend has finished initializing
+ * and is ready to accept orders. */
+-(void) gstreamerRTSPInitialized;
 
-/* Initialization method. Pass the delegate that will take care of the UI.
- * This delegate must implement the GStreamerRTSPBackendDelegate protocol.
- * Pass also the UIView object that will hold the video window. */
--(id) init:(id)uiDelegate
- videoView:(UIView*)video_view;
+/* Called when the GStreamer backend wants to output some message
+ * to the screen. */
+-(void) gstreamerRTSPSetUIMessage:(NSString *)message;
 
-/* Quit the main loop and free all resources, including the pipeline and
- * the references to the ui delegate and the UIView used for rendering, so
- * these objects can be deallocated. */
--(void) deinit;
+/* Called when the media size is first discovered or it changes */
+-(void) gstreamerRTSPMediaSizeChanged:(NSInteger)width height:(NSInteger)height;
 
-/* Set the pipeline to PLAYING */
--(void) play;
-
-/* Set the pipeline to PAUSED */
--(void) pause;
-
-/* Set the URI to be played */
--(void) setUri:(NSString*)uri;
-
-/* Set the position to seek to, in milliseconds */
--(void) setPosition:(NSInteger)milliseconds;
-
--(void) setMute:(BOOL)muted;
+/* Called when the media position changes. Times in milliseconds */
+-(void) gstreamerRTSPSetCurrentPosition:(NSInteger)position duration:(NSInteger)duration;
 
 @end

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * GStreamer-Brilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
  * Copyright (C) 2022 Brilliant Home Technologies
  *
@@ -22,21 +22,13 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol GStreamerRTSPBackendDelegate <NSObject>
+//! Project version number for GStreamerBrilliant.
+FOUNDATION_EXPORT double GStreamerBrilliantVersionNumber;
 
-@optional
-/* Called when the GStreamer RTSP backend has finished initializing
- * and is ready to accept orders. */
--(void) gstreamerRTSPInitialized;
+//! Project version string for GStreamerBrilliant.
+FOUNDATION_EXPORT const unsigned char GStreamerBrilliantVersionString[];
 
-/* Called when the GStreamer backend wants to output some message
- * to the screen. */
--(void) gstreamerRTSPSetUIMessage:(NSString *)message;
+// In this header, you should import all the public headers of your framework using statements like #import <GStreamerBrilliant/PublicHeader.h>
+#import <GStreamerBrilliant/GStreamerRTSPBackend.h>
+#import <GStreamerBrilliant/GStreamerRTSPBackendDelegate.h>
 
-/* Called when the media size is first discovered or it changes */
--(void) gstreamerRTSPMediaSizeChanged:(NSInteger)width height:(NSInteger)height;
-
-/* Called when the media position changes. Times in milliseconds */
--(void) gstreamerRTSPSetCurrentPosition:(NSInteger)position duration:(NSInteger)duration;
-
-@end

@@ -1,5 +1,5 @@
 /*****************************************************************************
- * GStreamer-Brilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
  * Copyright (C) 2022 Brilliant Home Technologies
  *

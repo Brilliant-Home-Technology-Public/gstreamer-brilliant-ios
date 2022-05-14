@@ -1,5 +1,5 @@
 /*****************************************************************************
- * GStreamer-Brilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
  * Copyright (C) 2022 Brilliant Home Technologies
  *
@@ -22,11 +22,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface GStreamer_BrilliantTests : XCTestCase
+@interface GStreamerBrilliantTests : XCTestCase
 
 @end
 
-@implementation GStreamer_BrilliantTests
+@implementation GStreamerBrilliantTests
 
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.

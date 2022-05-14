@@ -1,5 +1,5 @@
 /*****************************************************************************
- * GStreamer-Brilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
  * Copyright (C) 2022 Brilliant Home Technologies
  *
@@ -21,14 +21,36 @@
  *****************************************************************************/
 
 #import <Foundation/Foundation.h>
+#import "GStreamerRTSPBackendDelegate.h"
+#import <UIKit/UIKit.h>
 
-//! Project version number for GStreamer_Brilliant.
-FOUNDATION_EXPORT double GStreamer_BrilliantVersionNumber;
+@interface GStreamerRTSPBackend : NSObject
 
-//! Project version string for GStreamer_Brilliant.
-FOUNDATION_EXPORT const unsigned char GStreamer_BrilliantVersionString[];
++(void) gst_ios_init;
 
-// In this header, you should import all the public headers of your framework using statements like #import <GStreamer_Brilliant/PublicHeader.h>
-#import <GStreamer_Brilliant/GStreamerRTSPBackend.h>
-#import <GStreamer_Brilliant/GStreamerRTSPBackendDelegate.h>
+/* Initialization method. Pass the delegate that will take care of the UI.
+ * This delegate must implement the GStreamerRTSPBackendDelegate protocol.
+ * Pass also the UIView object that will hold the video window. */
+-(id) init:(id)uiDelegate
+ videoView:(UIView*)video_view;
 
+/* Quit the main loop and free all resources, including the pipeline and
+ * the references to the ui delegate and the UIView used for rendering, so
+ * these objects can be deallocated. */
+-(void) deinit;
+
+/* Set the pipeline to PLAYING */
+-(void) play;
+
+/* Set the pipeline to PAUSED */
+-(void) pause;
+
+/* Set the URI to be played */
+-(void) setUri:(NSString*)uri;
+
+/* Set the position to seek to, in milliseconds */
+-(void) setPosition:(NSInteger)milliseconds;
+
+-(void) setMute:(BOOL)muted;
+
+@end
