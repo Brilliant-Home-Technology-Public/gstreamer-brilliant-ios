@@ -35,7 +35,7 @@
 			containerPortal = 41F870E12821FD5300C40C33 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 41F870E92821FD5300C40C33;
-			remoteInfo = "GStreamerBrilliant";
+			remoteInfo = GStreamerBrilliant;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -183,7 +183,7 @@
 			dependencies = (
 			);
 			name = GStreamerBrilliant;
-			productName = "GStreamerBrilliant";
+			productName = GStreamerBrilliant;
 			productReference = 41F870EA2821FD5300C40C33 /* GStreamerBrilliant.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -201,7 +201,7 @@
 				41F870F72821FD5300C40C33 /* PBXTargetDependency */,
 			);
 			name = GStreamerBrilliantTests;
-			productName = "GStreamerBrilliantTests";
+			productName = GStreamerBrilliantTests;
 			productReference = 41F870F42821FD5300C40C33 /* GStreamerBrilliantTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -339,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -395,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -492,7 +492,7 @@
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamerBrilliantTests";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.brilliant.brilliant.GStreamerBrilliantTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,7 +507,7 @@
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tech.brilliant.brilliant.GStreamerBrilliantTests";
+				PRODUCT_BUNDLE_IDENTIFIER = tech.brilliant.brilliant.GStreamerBrilliantTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
