@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41399034283323A000513FB8 /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = 41399033283323A000513FB8 /* LICENSE.LGPL */; };
 		41795231282356C30019E12E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41795230282356C30019E12E /* AssetsLibrary.framework */; };
 		417952322823578D0019E12E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871192822010900C40C33 /* libiconv.tbd */; };
 		41F870EF2821FD5300C40C33 /* GStreamerBrilliant.docc in Sources */ = {isa = PBXBuildFile; fileRef = 41F870EE2821FD5300C40C33 /* GStreamerBrilliant.docc */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41399033283323A000513FB8 /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
 		41795230282356C30019E12E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/iOSSupport/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		41F870EA2821FD5300C40C33 /* GStreamerBrilliant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GStreamerBrilliant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F870ED2821FD5300C40C33 /* GStreamerBrilliant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamerBrilliant.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		41F870E02821FD5300C40C33 = {
 			isa = PBXGroup;
 			children = (
+				41399033283323A000513FB8 /* LICENSE.LGPL */,
 				41F870EC2821FD5300C40C33 /* GStreamerBrilliant */,
 				41F870F82821FD5300C40C33 /* GStreamerBrilliantTests */,
 				41F870EB2821FD5300C40C33 /* Products */,
@@ -246,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41399034283323A000513FB8 /* LICENSE.LGPL in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
