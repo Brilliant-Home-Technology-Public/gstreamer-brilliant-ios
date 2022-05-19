@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "41F870E92821FD5300C40C33"
-               BuildableName = "GStreamer_Brilliant.framework"
-               BlueprintName = "GStreamer-Brilliant"
-               ReferencedContainer = "container:GStreamer-Brilliant.xcodeproj">
+               BuildableName = "GStreamerBrilliant.framework"
+               BlueprintName = "GStreamerBrilliant"
+               ReferencedContainer = "container:GStreamerBrilliant.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41F870F32821FD5300C40C33"
-               BuildableName = "GStreamer-BrilliantTests.xctest"
-               BlueprintName = "GStreamer-BrilliantTests"
-               ReferencedContainer = "container:GStreamer-Brilliant.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -61,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "41F870E92821FD5300C40C33"
-            BuildableName = "GStreamer_Brilliant.framework"
-            BlueprintName = "GStreamer-Brilliant"
-            ReferencedContainer = "container:GStreamer-Brilliant.xcodeproj">
+            BuildableName = "GStreamerBrilliant.framework"
+            BlueprintName = "GStreamerBrilliant"
+            ReferencedContainer = "container:GStreamerBrilliant.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

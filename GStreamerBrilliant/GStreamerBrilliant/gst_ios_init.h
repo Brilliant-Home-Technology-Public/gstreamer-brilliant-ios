@@ -1,3 +1,26 @@
+/*****************************************************************************
+ * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
+ *****************************************************************************
+ * Copyright (C) 2022 Brilliant Home Technologies
+ *
+ * Authors: Brilliant iOS Team <apple_developer # brilliant.tech>
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation; either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program; if not, write to the Free Software Foundation,
+ * Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
+ *****************************************************************************/
+
+
 #ifndef __GST_IOS_INIT_H__
 #define __GST_IOS_INIT_H__
 
@@ -25,10 +48,11 @@ G_PASTE(g_io_, G_PASTE(name, _load)) (NULL)
 #define GST_IOS_PLUGIN_VIDEOCONVERT
 #define GST_IOS_PLUGIN_AUTODETECT
 #define GST_IOS_PLUGIN_AUDIOPARSERS
+#define GST_IOS_PLUGIN_VOLUME
 
 // Codecs Plugins:
 //#define GST_IOS_PLUGINS_CODECS
-#define GST_IOS_PLUGIN_OPENH264
+//#define GST_IOS_PLUGIN_OPENH264
 #define GST_IOS_PLUGIN_VIDEOPARSERSBAD
 //#define GST_IOS_PLUGIN_WEBRTCDSP
 
@@ -61,8 +85,8 @@ G_PASTE(g_io_, G_PASTE(name, _load)) (NULL)
 //#define GST_IOS_PLUGINS_EFFECTS
 #define GST_IOS_PLUGIN_DEBUG
 #define GST_IOS_PLUGIN_AUTOCONVERT
-#define GST_IOS_PLUGIN_ALPHACOLOR
-#define GST_IOS_PLUGIN_BAYER
+//#define GST_IOS_PLUGIN_ALPHACOLOR
+//#define GST_IOS_PLUGIN_BAYER
 
 
 #define GST_IOS_GIO_MODULE_OPENSSL
