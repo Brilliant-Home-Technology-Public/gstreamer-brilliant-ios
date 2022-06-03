@@ -108,19 +108,21 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
 
 -(void) deinit
 {
-  if (main_loop) {
-    g_main_loop_quit(main_loop);
-  }
-  GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE (pipeline));
-  for (NSNumber *bus_signal_id in bus_signal_ids) {
-    g_signal_handler_disconnect(G_OBJECT(bus), [bus_signal_id unsignedLongValue]);
-  }
-  [bus_signal_ids removeAllObjects];
-  for (NSNumber *rtsp_signal_id in rtsp_signal_ids) {
-    g_signal_handler_disconnect(G_OBJECT(rtsp_src), [rtsp_signal_id unsignedLongValue]);
-  }
-  [rtsp_signal_ids removeAllObjects];
-  
+  dispatch_async(dispatch_get_main_queue(), ^{
+    GST_DEBUG("Quit main loop");
+    if (self->main_loop) {
+      g_main_loop_quit(self->main_loop);
+    }
+    GstBus *bus = gst_pipeline_get_bus(GST_PIPELINE (self->pipeline));
+    for (NSNumber *bus_signal_id in self->bus_signal_ids) {
+      g_signal_handler_disconnect(G_OBJECT(bus), [bus_signal_id unsignedLongValue]);
+    }
+    [self->bus_signal_ids removeAllObjects];
+    for (NSNumber *rtsp_signal_id in self->rtsp_signal_ids) {
+      g_signal_handler_disconnect(G_OBJECT(self->rtsp_src), [rtsp_signal_id unsignedLongValue]);
+    }
+    [self->rtsp_signal_ids removeAllObjects];
+  });
 }
 
 -(void) play
