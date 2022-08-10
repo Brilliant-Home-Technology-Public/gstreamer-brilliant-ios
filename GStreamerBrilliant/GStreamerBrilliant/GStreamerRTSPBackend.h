@@ -26,8 +26,6 @@
 
 @interface GStreamerRTSPBackend : NSObject
 
-+(void) gst_ios_init;
-
 /* Initialization method. Pass the delegate that will take care of the UI.
  * This delegate must implement the GStreamerRTSPBackendDelegate protocol.
  * Pass also the UIView object that will hold the video window. */

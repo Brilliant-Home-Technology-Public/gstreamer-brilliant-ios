@@ -1,3 +1,5 @@
+#ifndef GStreamerBrilliantHelper_h
+#define GStreamerBrilliantHelper_h
 /*****************************************************************************
  * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
@@ -22,14 +24,10 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for GStreamerBrilliant.
-FOUNDATION_EXPORT double GStreamerBrilliantVersionNumber;
+@interface GStreamerBrilliantHelper : NSObject
 
-//! Project version string for GStreamerBrilliant.
-FOUNDATION_EXPORT const unsigned char GStreamerBrilliantVersionString[];
++(void) gst_ios_init;
 
-// In this header, you should import all the public headers of your framework using statements like #import <GStreamerBrilliant/PublicHeader.h>
-#import <GStreamerBrilliant/GStreamerBrilliantHelper.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackend.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackendDelegate.h>
+@end
 
+#endif /* GStreamerBrilliantHelper_h */

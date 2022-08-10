@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4131009128A4792B00B1D9E3 /* GStreamerBrilliantHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */; };
 		41399034283323A000513FB8 /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = 41399033283323A000513FB8 /* LICENSE.LGPL */; };
 		41795231282356C30019E12E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41795230282356C30019E12E /* AssetsLibrary.framework */; };
 		417952322823578D0019E12E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871192822010900C40C33 /* libiconv.tbd */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4131008F28A4791900B1D9E3 /* GStreamerBrilliantHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamerBrilliantHelper.h; sourceTree = "<group>"; };
+		4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GStreamerBrilliantHelper.m; sourceTree = "<group>"; };
 		41399033283323A000513FB8 /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
 		41795230282356C30019E12E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/iOSSupport/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		41F870EA2821FD5300C40C33 /* GStreamerBrilliant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GStreamerBrilliant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +128,8 @@
 				41F871082821FF7400C40C33 /* GStreamerRTSPBackendDelegate.h */,
 				41F870ED2821FD5300C40C33 /* GStreamerBrilliant.h */,
 				41F870EE2821FD5300C40C33 /* GStreamerBrilliant.docc */,
+				4131008F28A4791900B1D9E3 /* GStreamerBrilliantHelper.h */,
+				4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */,
 			);
 			path = GStreamerBrilliant;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4131009128A4792B00B1D9E3 /* GStreamerBrilliantHelper.m in Sources */,
 				41F871092821FF7500C40C33 /* GStreamerRTSPBackend.m in Sources */,
 				41F870EF2821FD5300C40C33 /* GStreamerBrilliant.docc in Sources */,
 				41F8710A2821FF7500C40C33 /* gst_ios_init.m in Sources */,

@@ -30,7 +30,6 @@
 
 #import "GStreamerRTSPBackend.h"
 
-#include "gst_ios_init.h"
 #include <gst/gst.h>
 #include <gst/video/video.h>
 #include <gst/rtsp/gstrtspmessage.h>
@@ -75,10 +74,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
   GstElement *volume;          /* Volume element for muting and adjusting stream volume */
   NSMutableArray<NSNumber *> *rtsp_signal_ids;
   NSMutableArray<NSNumber *> *bus_signal_ids;
-}
-
-+(void)gst_ios_init {
-  gst_ios_init();
 }
 
 /*

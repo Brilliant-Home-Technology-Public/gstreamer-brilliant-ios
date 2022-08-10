@@ -21,15 +21,13 @@
  *****************************************************************************/
 
 #import <Foundation/Foundation.h>
+#import "GStreamerBrilliantHelper.h"
+#include "gst_ios_init.h"
 
-//! Project version number for GStreamerBrilliant.
-FOUNDATION_EXPORT double GStreamerBrilliantVersionNumber;
+@implementation GStreamerBrilliantHelper
 
-//! Project version string for GStreamerBrilliant.
-FOUNDATION_EXPORT const unsigned char GStreamerBrilliantVersionString[];
++(void)gst_ios_init {
+  gst_ios_init();
+}
 
-// In this header, you should import all the public headers of your framework using statements like #import <GStreamerBrilliant/PublicHeader.h>
-#import <GStreamerBrilliant/GStreamerBrilliantHelper.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackend.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackendDelegate.h>
-
+@end
