@@ -173,7 +173,7 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
 
 /* If we have pipeline and it is running, query the current position and clip duration and inform
  * the application */
-static gboolean refresh_ui (GStreamerRTSPBackend *self) {
+static gboolean rtsp_refresh_ui (GStreamerRTSPBackend *self) {
   gint64 position;
   /* We do not want to update anything unless we have a working pipeline in the PAUSED or PLAYING state */
   if (!self || !self->pipeline || self->state < GST_STATE_PAUSED)
@@ -192,7 +192,7 @@ static gboolean refresh_ui (GStreamerRTSPBackend *self) {
 }
 
 /* Forward declaration for the delayed seek callback */
-static gboolean delayed_seek_cb (GStreamerRTSPBackend *self);
+static gboolean rtsp_delayed_seek_cb (GStreamerRTSPBackend *self);
 
 /* Perform seek, if we are not too close to the previous seek. Otherwise, schedule the seek for
  * some time in the future. */
@@ -211,7 +211,7 @@ static void execute_seek (gint64 position, GStreamerRTSPBackend *self) {
     if (self->desired_position == GST_CLOCK_TIME_NONE) {
       /* There was no previous seek scheduled. Setup a timer for some time in the future */
       timeout_source = g_timeout_source_new ((SEEK_MIN_DELAY - diff) / GST_MSECOND);
-      g_source_set_callback (timeout_source, (GSourceFunc)delayed_seek_cb, (__bridge void *)self, NULL);
+      g_source_set_callback (timeout_source, (GSourceFunc)rtsp_delayed_seek_cb, (__bridge void *)self, NULL);
       g_source_attach (timeout_source, self->context);
       g_source_unref (timeout_source);
     }
@@ -230,14 +230,14 @@ static void execute_seek (gint64 position, GStreamerRTSPBackend *self) {
 }
 
 /* Delayed seek callback. This gets called by the timer setup in the above function. */
-static gboolean delayed_seek_cb (GStreamerRTSPBackend *self) {
+static gboolean rtsp_delayed_seek_cb (GStreamerRTSPBackend *self) {
   GST_DEBUG ("Doing delayed seek to %" GST_TIME_FORMAT, GST_TIME_ARGS (self->desired_position));
   execute_seek (self->desired_position, self);
   return FALSE;
 }
 
 /* Retrieve errors from the bus and show them on the UI */
-static void error_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self)
+static void rtsp_error_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self)
 {
   GError *err;
   gchar *debug_info;
@@ -253,20 +253,20 @@ static void error_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self)
 }
 
 /* Called when the End Of the Stream is reached. Just move to the beginning of the media and pause. */
-static void eos_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
+static void rtsp_eos_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
   self->target_state = GST_STATE_PAUSED;
   self->is_live = (gst_element_set_state (self->pipeline, GST_STATE_PAUSED) == GST_STATE_CHANGE_NO_PREROLL);
   execute_seek (0, self);
 }
 
 /* Called when the duration of the media changes. Just mark it as unknown, so we re-query it in the next UI refresh. */
-static void duration_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
+static void rtsp_duration_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
   self->duration = GST_CLOCK_TIME_NONE;
 }
 
 /* Called when buffering messages are received. We inform the UI about the current buffering level and
  * keep the pipeline paused until 100% buffering is reached. At that point, set the desired state. */
-static void buffering_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
+static void rtsp_buffering_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
   gint percent;
   
   if (self->is_live)
@@ -286,14 +286,14 @@ static void buffering_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *se
 }
 
 /* Called when the clock is lost */
-static void clock_lost_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
+static void rtsp_clock_lost_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self) {
   if (self->target_state >= GST_STATE_PLAYING) {
     gst_element_set_state (self->pipeline, GST_STATE_PAUSED);
     gst_element_set_state (self->pipeline, GST_STATE_PLAYING);
   }
 }
 
-static void on_bus_message (GstBus *bus, GstMessage *message, GStreamerRTSPBackend *self) {
+static void rtsp_on_bus_message (GstBus *bus, GstMessage *message, GStreamerRTSPBackend *self) {
   GstState old_state;
   GstState new_state;
   GError *err = NULL;
@@ -329,7 +329,7 @@ static void on_bus_message (GstBus *bus, GstMessage *message, GStreamerRTSPBacke
 }
 
 /* Retrieve the video sink's Caps and tell the application about the media size */
-static void check_media_size (GStreamerRTSPBackend *self, GstElement * video_sink) {
+static void rtsp_check_media_size (GStreamerRTSPBackend *self, GstElement * video_sink) {
   GstPad *video_sink_pad;
   GstCaps *caps;
   GstVideoInfo info;
@@ -357,7 +357,7 @@ static void check_media_size (GStreamerRTSPBackend *self, GstElement * video_sin
 }
 
 /* Notify UI about pipeline state changes */
-static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self)
+static void rtsp_state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend *self)
 {
   GstState old_state, new_state, pending_state;
   gst_message_parse_state_changed (msg, &old_state, &new_state, &pending_state);
@@ -370,7 +370,7 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend
     
     if (old_state == GST_STATE_READY && new_state == GST_STATE_PAUSED)
     {
-      check_media_size(self, self->video_sink);
+      rtsp_check_media_size(self, self->video_sink);
       
       /* If there was a scheduled seek, perform it now that we have moved to the Paused state */
       if (GST_CLOCK_TIME_IS_VALID (self->desired_position))
@@ -433,7 +433,7 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend
   // Register for messages coming from the pipeline so we can timeout if the pipeline never starts
   bus = gst_pipeline_get_bus(GST_PIPELINE (pipeline));
   gst_bus_enable_sync_message_emission(bus);
-  gulong signalId = g_signal_connect(G_OBJECT (bus), "sync-message", (GCallback)on_bus_message, (__bridge void *)self);
+  gulong signalId = g_signal_connect(G_OBJECT (bus), "sync-message", (GCallback)rtsp_on_bus_message, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:signalId]];
   gst_object_unref(G_OBJECT (bus));
   
@@ -452,23 +452,23 @@ static void state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBackend
   g_source_set_callback (bus_source, (GSourceFunc) gst_bus_async_signal_func, NULL, NULL);
   g_source_attach (bus_source, context);
   g_source_unref (bus_source);
-  gulong errorSignalId = g_signal_connect (G_OBJECT (bus), "message::error", (GCallback)error_cb, (__bridge void *)self);
+  gulong errorSignalId = g_signal_connect (G_OBJECT (bus), "message::error", (GCallback)rtsp_error_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:errorSignalId]];
-  gulong eosSignalId = g_signal_connect (G_OBJECT (bus), "message::eos", (GCallback)eos_cb, (__bridge void *)self);
+  gulong eosSignalId = g_signal_connect (G_OBJECT (bus), "message::eos", (GCallback)rtsp_eos_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:eosSignalId]];
-  gulong stateChangedSignalId = g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)state_changed_cb, (__bridge void *)self);
+  gulong stateChangedSignalId = g_signal_connect (G_OBJECT (bus), "message::state-changed", (GCallback)rtsp_state_changed_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:stateChangedSignalId]];
-  gulong durationSignalId = g_signal_connect (G_OBJECT (bus), "message::duration", (GCallback)duration_cb, (__bridge void *)self);
+  gulong durationSignalId = g_signal_connect (G_OBJECT (bus), "message::duration", (GCallback)rtsp_duration_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:durationSignalId]];
-  gulong bufferingSignalId = g_signal_connect (G_OBJECT (bus), "message::buffering", (GCallback)buffering_cb, (__bridge void *)self);
+  gulong bufferingSignalId = g_signal_connect (G_OBJECT (bus), "message::buffering", (GCallback)rtsp_buffering_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:bufferingSignalId]];
-  gulong clockLostSignalId = g_signal_connect (G_OBJECT (bus), "message::clock-lost", (GCallback)clock_lost_cb, (__bridge void *)self);
+  gulong clockLostSignalId = g_signal_connect (G_OBJECT (bus), "message::clock-lost", (GCallback)rtsp_clock_lost_cb, (__bridge void *)self);
   [bus_signal_ids addObject:[NSNumber numberWithUnsignedLong:clockLostSignalId]];
   gst_object_unref (bus);
   
   /* Register a function that GLib will call 4 times per second */
   timeout_source = g_timeout_source_new (250);
-  g_source_set_callback (timeout_source, (GSourceFunc)refresh_ui, (__bridge void *)self, NULL);
+  g_source_set_callback (timeout_source, (GSourceFunc)rtsp_refresh_ui, (__bridge void *)self, NULL);
   g_source_attach (timeout_source, context);
   g_source_unref (timeout_source);
   
