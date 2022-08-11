@@ -72,7 +72,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
   GstClockTime last_seek_time; /* For seeking overflow prevention (throttling) p*/
   gboolean is_live;            /* Live streams do not use buffering */
   GstElement *volume;          /* Volume element for muting and adjusting stream volume */
-  NSMutableArray<NSNumber *> *rtsp_signal_ids;
   NSMutableArray<NSNumber *> *bus_signal_ids;
 }
 
@@ -88,7 +87,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
     self->ui_video_view = video_view;
     self->duration = GST_CLOCK_TIME_NONE;
     
-    self->rtsp_signal_ids = [NSMutableArray array];
     self->bus_signal_ids = [NSMutableArray array];
     GST_DEBUG_CATEGORY_INIT (debug_category, "brilliant", 0, "Brilliant-Mobile");
     gst_debug_set_threshold_for_name("brilliant", GST_LEVEL_TRACE);
@@ -113,10 +111,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
       g_signal_handler_disconnect(G_OBJECT(bus), [bus_signal_id unsignedLongValue]);
     }
     [self->bus_signal_ids removeAllObjects];
-    for (NSNumber *rtsp_signal_id in self->rtsp_signal_ids) {
-      g_signal_handler_disconnect(G_OBJECT(self->rtsp_src), [rtsp_signal_id unsignedLongValue]);
-    }
-    [self->rtsp_signal_ids removeAllObjects];
   });
 }
 
