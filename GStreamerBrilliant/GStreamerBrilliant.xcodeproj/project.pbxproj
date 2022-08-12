@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4131009128A4792B00B1D9E3 /* GStreamerBrilliantHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */; };
+		4131009428A47D4A00B1D9E3 /* GStreamerRTPCustomBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4131009328A47D4A00B1D9E3 /* GStreamerRTPCustomBackend.m */; };
 		41399034283323A000513FB8 /* LICENSE.LGPL in Resources */ = {isa = PBXBuildFile; fileRef = 41399033283323A000513FB8 /* LICENSE.LGPL */; };
 		41795231282356C30019E12E /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41795230282356C30019E12E /* AssetsLibrary.framework */; };
 		417952322823578D0019E12E /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F871192822010900C40C33 /* libiconv.tbd */; };
+		41971A1A28A5D033004F4188 /* GStreamerBrilliantHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4131008F28A4791900B1D9E3 /* GStreamerBrilliantHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41971A1B28A5D040004F4188 /* GStreamerRTPCustomBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 4131009228A47D1E00B1D9E3 /* GStreamerRTPCustomBackend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41971A1C28A5D04B004F4188 /* GStreamerRTPCustomBackendDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4131009528A47DE800B1D9E3 /* GStreamerRTPCustomBackendDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41F870EF2821FD5300C40C33 /* GStreamerBrilliant.docc in Sources */ = {isa = PBXBuildFile; fileRef = 41F870EE2821FD5300C40C33 /* GStreamerBrilliant.docc */; };
 		41F870F52821FD5300C40C33 /* GStreamerBrilliant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F870EA2821FD5300C40C33 /* GStreamerBrilliant.framework */; };
 		41F870FA2821FD5300C40C33 /* GStreamerBrilliantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F870F92821FD5300C40C33 /* GStreamerBrilliantTests.m */; };
@@ -44,6 +48,9 @@
 /* Begin PBXFileReference section */
 		4131008F28A4791900B1D9E3 /* GStreamerBrilliantHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamerBrilliantHelper.h; sourceTree = "<group>"; };
 		4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GStreamerBrilliantHelper.m; sourceTree = "<group>"; };
+		4131009228A47D1E00B1D9E3 /* GStreamerRTPCustomBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamerRTPCustomBackend.h; sourceTree = "<group>"; };
+		4131009328A47D4A00B1D9E3 /* GStreamerRTPCustomBackend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GStreamerRTPCustomBackend.m; sourceTree = "<group>"; };
+		4131009528A47DE800B1D9E3 /* GStreamerRTPCustomBackendDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GStreamerRTPCustomBackendDelegate.h; sourceTree = "<group>"; };
 		41399033283323A000513FB8 /* LICENSE.LGPL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.LGPL; sourceTree = "<group>"; };
 		41795230282356C30019E12E /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/iOSSupport/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
 		41F870EA2821FD5300C40C33 /* GStreamerBrilliant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GStreamerBrilliant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +137,9 @@
 				41F870EE2821FD5300C40C33 /* GStreamerBrilliant.docc */,
 				4131008F28A4791900B1D9E3 /* GStreamerBrilliantHelper.h */,
 				4131009028A4792B00B1D9E3 /* GStreamerBrilliantHelper.m */,
+				4131009228A47D1E00B1D9E3 /* GStreamerRTPCustomBackend.h */,
+				4131009328A47D4A00B1D9E3 /* GStreamerRTPCustomBackend.m */,
+				4131009528A47DE800B1D9E3 /* GStreamerRTPCustomBackendDelegate.h */,
 			);
 			path = GStreamerBrilliant;
 			sourceTree = "<group>";
@@ -169,7 +179,10 @@
 			files = (
 				41F870FB2821FD5300C40C33 /* GStreamerBrilliant.h in Headers */,
 				41F8710C2821FF7500C40C33 /* gst_ios_init.h in Headers */,
+				41971A1A28A5D033004F4188 /* GStreamerBrilliantHelper.h in Headers */,
+				41971A1C28A5D04B004F4188 /* GStreamerRTPCustomBackendDelegate.h in Headers */,
 				41F8710D2821FF7500C40C33 /* GStreamerRTSPBackendDelegate.h in Headers */,
+				41971A1B28A5D040004F4188 /* GStreamerRTPCustomBackend.h in Headers */,
 				41F8710B2821FF7500C40C33 /* GStreamerRTSPBackend.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4131009428A47D4A00B1D9E3 /* GStreamerRTPCustomBackend.m in Sources */,
 				4131009128A4792B00B1D9E3 /* GStreamerBrilliantHelper.m in Sources */,
 				41F871092821FF7500C40C33 /* GStreamerRTSPBackend.m in Sources */,
 				41F870EF2821FD5300C40C33 /* GStreamerBrilliant.docc in Sources */,
@@ -331,7 +345,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -393,7 +407,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -421,11 +435,11 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 1.1.3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk\"";
@@ -461,11 +475,11 @@
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.1.1;
+				DYLIB_CURRENT_VERSION = 1.1.3;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = "\"$(HOME)/Library/Developer/GStreamer/iPhone.sdk\"";
@@ -500,7 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -515,7 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.3;
 				DEVELOPMENT_TEAM = 7FL7548EA5;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;

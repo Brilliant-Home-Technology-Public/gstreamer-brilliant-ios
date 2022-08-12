@@ -1,3 +1,6 @@
+#ifndef GStreamerRTPCustomBackendDelegate_h
+#define GStreamerRTPCustomBackendDelegate_h
+
 /*****************************************************************************
  * GStreamerBrilliant: Dynamic XCFramework built with system's GStreamer Implementation. Intended for use in Brilliant Mobile App.
  *****************************************************************************
@@ -22,16 +25,23 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for GStreamerBrilliant.
-FOUNDATION_EXPORT double GStreamerBrilliantVersionNumber;
+@protocol GStreamerRTPCustomBackendDelegate <NSObject>
 
-//! Project version string for GStreamerBrilliant.
-FOUNDATION_EXPORT const unsigned char GStreamerBrilliantVersionString[];
+@optional
+/* Called when the GStreamer RTP Custom backend has finished initializing
+ * and is ready to accept orders. */
+-(void) gstreamerRTPCustomInitialized;
 
-// In this header, you should import all the public headers of your framework using statements like #import <GStreamerBrilliant/PublicHeader.h>
-#import <GStreamerBrilliant/GStreamerBrilliantHelper.h>
-#import <GStreamerBrilliant/GStreamerRTPCustomBackend.h>
-#import <GStreamerBrilliant/GStreamerRTPCustomBackendDelegate.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackend.h>
-#import <GStreamerBrilliant/GStreamerRTSPBackendDelegate.h>
+/* Called when the GStreamer backend wants to output some message
+ * to the screen. */
+-(void) gstreamerRTPCustomSetUIMessage:(NSString *)message;
 
+/* Called when the media size is first discovered or it changes */
+-(void) gstreamerRTPCustomMediaSizeChanged:(NSInteger)width height:(NSInteger)height;
+
+/* Called when the media position changes. Times in milliseconds */
+-(void) gstreamerRTPCustomSetCurrentPosition:(NSInteger)position duration:(NSInteger)duration;
+
+@end
+
+#endif /* GStreamerRTPCustomBackendDelegate_h */
