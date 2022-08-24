@@ -30,7 +30,7 @@
  * This delegate must implement the GStreamerRTSPBackendDelegate protocol.
  * Pass also the UIView object that will hold the video window. */
 -(id) init:(id)uiDelegate
- videoView:(UIView*)video_view;
+ videoView:(UIView*)videoView;
 
 /* Quit the main loop and free all resources, including the pipeline and
  * the references to the ui delegate and the UIView used for rendering, so
