@@ -621,7 +621,6 @@ gst_ios_init (void)
   g_setenv ("FONTCONFIG_PATH", resources_dir, TRUE);
   
   ca_certificates = g_build_filename (resources_dir, "ca-certificates.crt", NULL);
-  GST_DEBUG("KIYOSHI - LOOKING FOR %s", ca_certificates);
   g_setenv ("CA_CERTIFICATES", ca_certificates, TRUE);
   
 #if defined(GST_IOS_GIO_MODULE_OPENSSL)
