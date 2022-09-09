@@ -432,7 +432,6 @@ static void rtsp_state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBa
   gst_bus_enable_sync_message_emission(bus);
   gulong signalId = g_signal_connect(G_OBJECT (bus), "sync-message", (GCallback)rtsp_on_bus_message, (__bridge void *)self);
   [busSignalIds addObject:[NSNumber numberWithUnsignedLong:signalId]];
-  gst_object_unref(G_OBJECT (bus));
   
   /* Set the pipeline to READY, so it can already accept a window handle */
   gst_element_set_state(pipeline, GST_STATE_READY);
@@ -440,6 +439,7 @@ static void rtsp_state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBa
   videoSink = gst_bin_get_by_interface(GST_BIN(pipeline), GST_TYPE_VIDEO_OVERLAY);
   if (!videoSink) {
     GST_ERROR ("Could not retrieve video sink");
+    gst_object_unref (bus);
     return;
   }
   gst_video_overlay_set_window_handle(GST_VIDEO_OVERLAY(videoSink), (guintptr) (id) uiVideoView);
