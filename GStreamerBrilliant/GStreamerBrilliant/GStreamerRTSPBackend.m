@@ -43,12 +43,11 @@
 
 G_BEGIN_DECLS
 
-GST_DEBUG_CATEGORY_STATIC (debug_category);
-#define GST_CAT_DEFAULT debug_category
-
 /* Do not allow seeks to be performed closer than this distance. It is visually useless, and will probably
  * confuse some demuxers. */
 #define SEEK_MIN_DELAY (500 * GST_MSECOND)
+
+G_END_DECLS
 
 @interface GStreamerRTSPBackend()
 -(void)setUIMessage:(gchar*) message;
@@ -88,8 +87,6 @@ GST_DEBUG_CATEGORY_STATIC (debug_category);
     self->duration = GST_CLOCK_TIME_NONE;
     
     self->busSignalIds = [NSMutableArray array];
-    GST_DEBUG_CATEGORY_INIT (debug_category, "brilliant", 0, "Brilliant-Mobile");
-    gst_debug_set_threshold_for_name("brilliant", GST_LEVEL_TRACE);
     /* Start the bus monitoring task */
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
       [self appFunction];

@@ -24,10 +24,15 @@
 #import "GStreamerBrilliantHelper.h"
 #include "gst_ios_init.h"
 
+GST_DEBUG_CATEGORY_STATIC (debug_category);
+#define GST_CAT_DEFAULT debug_category
+
 @implementation GStreamerBrilliantHelper
 
 +(void)gst_ios_init {
   gst_ios_init();
+  GST_DEBUG_CATEGORY_INIT (debug_category, "brilliant", 0, "Brilliant-Mobile");
+  gst_debug_set_threshold_for_name("brilliant", GST_LEVEL_DEBUG);
 }
 
 @end

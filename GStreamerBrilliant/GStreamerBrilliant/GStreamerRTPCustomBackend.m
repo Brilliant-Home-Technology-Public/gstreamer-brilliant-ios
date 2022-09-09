@@ -42,14 +42,13 @@
 
 G_BEGIN_DECLS
 
-GST_DEBUG_CATEGORY_STATIC (debug_category);
-#define GST_CAT_DEFAULT debug_category
-
 /* Do not allow seeks to be performed closer than this distance. It is visually useless, and will probably
  * confuse some demuxers. */
 #define SEEK_MIN_DELAY (500 * GST_MSECOND)
 #define ONE_64 G_GUINT64_CONSTANT (1)
 #define CHANNEL_MASK_STEREO ((ONE_64<<GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT) | (ONE_64<<GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT))
+
+G_END_DECLS
 
 #import <CoreFoundation/CoreFoundation.h>
 #import <sys/socket.h>
