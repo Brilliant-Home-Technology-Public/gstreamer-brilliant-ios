@@ -347,10 +347,6 @@ static void rtsp_check_media_size (GStreamerRTSPBackend *self, GstElement * vide
       [self->uiDelegate gstreamerRTSPMediaSizeChanged:info.width height:info.height];
     }
   }
-  
-  gst_caps_unref(caps);
-  gst_object_unref (videoSinkPad);
-  gst_object_unref(videoSink);
 }
 
 /* Notify UI about pipeline state changes */
