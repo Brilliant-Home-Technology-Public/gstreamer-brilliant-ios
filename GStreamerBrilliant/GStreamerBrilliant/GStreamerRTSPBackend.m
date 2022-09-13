@@ -415,7 +415,7 @@ static void rtsp_state_changed_cb (GstBus *bus, GstMessage *msg, GStreamerRTSPBa
   }
   rtspSrc = gst_bin_get_by_name(GST_BIN (pipeline), "rtspsrc");
   volume = gst_bin_get_by_name(GST_BIN (pipeline), "vol");
-  g_object_set(volume, "mute", FALSE, NULL);
+  g_object_set(volume, "mute", true, NULL);
 
   // Rtsp factory
   g_object_set(rtspSrc, "protocols", 0x4, NULL);
